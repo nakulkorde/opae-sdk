@@ -26,18 +26,18 @@ matrix:
         - libjson-c-dev
         - uuid-dev
         - doxygen
-    - script: scripts/coverage-gtapi-mock-drv.sh
-      cache: 
-        - ccache
-        - pip
-      addons:
-        apt:
-          packages:
-          - libjson-c-dev
-          - uuid-dev
-          - doxygen
-      before_install:
-        - pip install --user cpp-coveralls  
+  - script: scripts/coverage-gtapi-mock-drv.sh
+    cache: 
+      - ccache
+      - pip
+    addons:
+      apt:
+       packages:
+        - libjson-c-dev
+        - uuid-dev
+        - doxygen
+    before_install:
+      - pip install --user cpp-coveralls  
   - script: scripts/build-documentation.sh
     cache: 
       - ccache
