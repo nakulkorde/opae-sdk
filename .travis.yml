@@ -36,6 +36,7 @@ matrix:
         - libjson-c-dev
         - uuid-dev
         - doxygen
+        - lcov
     before_install:
       - pip install --user cpp-coveralls  
 env:
