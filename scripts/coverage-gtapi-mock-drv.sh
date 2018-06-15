@@ -32,6 +32,6 @@ lcov --remove coverage.info '/usr/**' 'tests/**' '*/**/CMakeFiles*' '/usr/includ
 #genhtml --branch-coverage --function-coverage coverage.info -o coverage_report coverage.info.cleaned
 
 #TODO - Enable coveralls once its integrated with github
-coveralls -l coverage.info.cleaned
+#coveralls -l coverage.info.cleaned
 
 echo "coverage-gtapi-mock-drv build PASSED"
