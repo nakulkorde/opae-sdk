@@ -34,11 +34,4 @@ lcov -a coverage.base -a coverage.info --output-file coverage.total
 lcov --remove coverage.total '/usr/**' 'tests/**' '*/**/CMakeFiles*' '/usr/include/c++/**' --output-file coverage.info.cleaned
 genhtml -o coverage coverage.info.cleaned
 
-#lcov -t test_coverage -o coverage.info -c -d coverage_files
-#lcov --remove coverage.info '/usr/**' 'tests/**' '*/**/CMakeFiles*' '/usr/include/c++/**' --output-file coverage.info.cleaned
-#genhtml --branch-coverage --function-coverage coverage.info -o coverage_report coverage.info.cleaned
-
-#TODO - Enable coveralls once its integrated with github
-#coveralls -l coverage.info.cleaned
-
 echo "coverage-gtapi-mock-drv build PASSED"
