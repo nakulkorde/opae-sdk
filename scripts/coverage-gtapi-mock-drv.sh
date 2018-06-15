@@ -32,6 +32,6 @@ find */**/opae-cxx-core.dir -iname "*.gcno" | xargs -i cp {} coverage_files
 lcov --directory coverage_files --capture --output-file coverage.info
 lcov -a coverage.base -a coverage.info --output-file coverage.total
 lcov --remove coverage.total '/usr/**' 'tests/**' '*/**/CMakeFiles*' '/usr/include/c++/**' --output-file coverage.info.cleaned
-genhtml -o coverage coverage.info.cleaned
+genhtml --function-coverage coverage.info -o coverage_report coverage.info.cleaned
 
 echo "coverage-gtapi-mock-drv build PASSED"
