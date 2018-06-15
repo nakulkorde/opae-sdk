@@ -12,8 +12,8 @@ cmake .. -DBUILD_TESTS=ON -DCMAKE_BUILD_TYPE=Coverage
 make mock gtapi fpgad
 
 lcov --directory . --zerocounters
-./bin/fpgad -d
-make test
+LD_PRELOAD="$PWD/lib/libmock.so" ./bin/fpgad -d
+CTEST_OUTPUT_ON_FAILURE=1 make test
 kill $(cat /tmp/fpgad.pid)
 
 find */**/opae-c.dir -iname "*.gcda" -exec chmod 664 '{}' \;
