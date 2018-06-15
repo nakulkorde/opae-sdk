@@ -29,7 +29,7 @@ find */**/opae-cxx-core.dir -iname "*.gcno" | xargs -i cp {} coverage_files
 
 lcov -t test_coverage -o coverage.info -c -d coverage_files
 lcov --remove coverage.info '/usr/**' 'tests/**' '*/**/CMakeFiles*' '/usr/include/c++/**' --output-file coverage.info.cleaned
-#genhtml --branch-coverage --function-coverage coverage.info -o coverage_report coverage.info.cleaned
+genhtml --branch-coverage --function-coverage coverage.info -o coverage_report coverage.info.cleaned
 
 #TODO - Enable coveralls once its integrated with github
 #coveralls -l coverage.info.cleaned
